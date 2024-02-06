@@ -7,7 +7,7 @@ Diese Anleitung basiert auf folgend genannten Quellen:
 * [tasmota-on-sonoff-zb-bridge-pro](https://notenoughtech.com/home-automation/tasmota-on-sonoff-zb-bridge-pro/#flash)
 
 
-Damit die ZigBee Bridge Pro von Sonoff als ZigBee2MQTT Koordinator in Home Assistant genutzt werden kann, ist es erforderlich eine alternative Firmware zu installieren.
+Damit die ZigBee Bridge Pro von Sonoff als Zigbee2MQTT Koordinator in Home Assistant genutzt werden kann, ist es erforderlich eine alternative Firmware zu installieren.
 
 ## Vorbereitung
 
@@ -72,14 +72,14 @@ Nachdem die ZigBee Bridge mit dem lokalen Netzwerk verbunden ist kann man wieder
 
 ## Firmware auf CC2652 flashen
 
-Neben dem ESP32, welcher ja unter der Tasmota Firmware läuft, muss auch das ZigBee Modul (CC2652) mit einer alternativen Firmware versorgt werden. Die benötigten Dateien sind in der Firmware Datei (tasmota32-zbbrdgpro.factory.bin) enthalten und liegen somit auf der ZigBee Bridge bereit. Unter _Consoles -> Manage File System_ können die benötigten Dateien auch eingesehen werden:
+Neben dem ESP32, welcher ja unter der Tasmota Firmware läuft, muss auch das ZigBee Modul (CC2652) mit einer alternativen Firmware versorgt werden. Die benötigten Dateien sind in der Firmware Datei (tasmota32-zbbrdgpro.factory.bin) enthalten und liegen somit auf der ZigBee Bridge bereit. Unter __Consoles__ -> __Manage File System__ können die benötigten Dateien auch eingesehen werden:
 
 * cc2652_flasher.be
 * intelhex.be
 * sonoff_zb_pro_flasher.be
 * SonoffZBPro_coord_20220219.hex
 
-Zum Flashen wird nun die Berry Console geöffnet, _Consoles -> Berry Scripting Console_ und folgende Befehle müssen zeilenweise ausgeführt werden:
+Zum Flashen wird nun die Berry Console geöffnet, __Consoles__ -> __Berry Scripting Console__ und folgende Befehle müssen zeilenweise ausgeführt werden:
 ```
 import sonoff_zb_pro_flasher as cc
 cc.load("SonoffZBPro_coord_20220219.hex")
@@ -96,9 +96,28 @@ Sollte hier etwas anderes zurück gegeben werden stimmt etwas nicht mit den übe
 ```
 cc.flash()
 ```
-Achtung, das Flashen dauert etwas länger und läuft völlig ohne Rückmeldung. Nach 10 Minuten sollte der Vorgang abgeschlossen sein und man kann über die Konsolenausgabe das Ergebnis prüfen. wichtig ist, dass man keinen Reset durchführt, sondern direkt zur Konsole, _Main Menu -> Consoles -> Console_ navigiert. Hier müssen sich folgende Einträge finden lassen:
+Achtung, das Flashen dauert etwas länger und läuft völlig ohne Rückmeldung. Nach 10 Minuten sollte der Vorgang abgeschlossen sein und man kann über die Konsolenausgabe das Ergebnis prüfen. wichtig ist, dass man keinen Reset durchführt, sondern direkt zur Konsole, __Main Menu__ -> __Consoles__ -> __Console__ navigiert. Hier müssen sich folgende Einträge finden lassen:
 ```
 11:28:01.563 FLH: Flashing started (takes 5 minutes during which Tasmota is unresponsive)
 11:34:50.172 FLH: Flashing completed: OK
 11:34:50.266 FLH: Flash crc32 0x000000 - 0x2FFFF = bytes('1598929A')
 ```
+
+## Konfigurieren für Zigbee2MQTT
+
+Aktuell läuft die Bridge im Mode ZigBee2Tasmota. Für die Verwendung in Home Assistant ist es allerdings zu empfehlen den Modus umzustellen, sodass die ZHA Integration oder das Zigbee2MQTT Addon genutzt werden kann.
+
+Über die Autokonfiguration, __Configuration__ -> __Auto-configuration__ lässt sich der Modus umstellen, hier muss __Sonoff ZBPro TCP__ als Konfiguration angewählt werden und mit __Apply Configuration__ übernommen werden. Nach einem Neustart sollte die ZigBee Bridge im TCP Modus starten.
+
+### Prüfen der Konfiguration
+
+Unter dem Eintrag __Configuration__ -> __Template__ muss der Eintrag wie folgt lauten:
+```
+{"NAME":"TCP ZBBridge Pro","GPIO":[0,0,576,0,480,0,0,0,0,1,1,5792,0,0,0,5472,0,320,5793,5504,0,640,608,32,0,0,0,0,0,1,0,0,0,0,0,0],"FLAG":0,"BASE":1}
+```
+
+Der Port, unter welchem die ZigBee Bridge erreichbar ist, lässt sich über die Regel, welche die TCPBridge startet konfigurieren. Hierzu muss folgendes in der Konsole, __Main Menu__ -> __Consoles__ -> __Console__ eingegeben werden:
+```
+backlog rule1 on system#boot do TCPStart 8888 endon ; rule1 1 ; TCPStart 8888 
+```
+Der Port, oben 8888, kann beliebig geändert werden.
