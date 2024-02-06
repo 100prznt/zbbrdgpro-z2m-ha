@@ -7,7 +7,7 @@ Diese Anleitung basiert auf folgend genannten Quellen:
 * [tasmota-on-sonoff-zb-bridge-pro](https://notenoughtech.com/home-automation/tasmota-on-sonoff-zb-bridge-pro/#flash)
 
 
-Damit die ZigBee Bridge Pro von Sonoff als Zigbee2MQTT Koordinator in Home Assistant genutzt werden kann, ist es erforderlich eine alternative Firmware zu installieren.
+Damit die __ZigBee Bridge Pro von Sonoff__ als Zigbee2MQTT Koordinator in Home Assistant genutzt werden kann, ist es erforderlich eine alternative Firmware zu installieren. In diesem Repository wird das ganue Vorgehen dokumentiert.
 
 ## Vorbereitung
 
@@ -16,11 +16,11 @@ Vor Beginn der Arbeiten sind folgende Hard- und Softwaretools bereit zu legen.
 ### Hardware
 
 * [Sonoff ZigBee Bridge Pro](https://amzn.to/3SMInVV)
-* USB zu TTL Seriell Adapter 3,3 V
-* Jumper Kabel
-* Stiftleiste (2,54 mm 5-polig)
+* [USB zu TTL Seriell Adapter 3,3 V](https://amzn.to/4brv9Fu)
+* [Jumper Kabel](https://amzn.to/3w89Dpd)
+* [Stiftleiste (2,54 mm 5-polig)](https://amzn.to/3HVmDAV)
 * Lötkolben inkl. Lötutensilien
-* kleiner Philipsschraubendreher
+* kleiner Phillips Schraubendreher
 
 ### Software
 
@@ -51,7 +51,7 @@ Nachdem die ZigBee Bridge Pro an den Seriell Adapter angeschlossen ist, kann die
 
 Im Gerätemanager des verwendeten PC muss nun der COM Anschluss identifiziert werden, welcher den Seriell Adapter zugewiesen wurde. Dann kann das EspTool gestartet werden.
 
-![Screenshot EspTool]()
+TODO ![Screenshot EspTool]()
 
 Folgende Einstellung müssen im EspTool vorgenommen werden:
 1. COM Port auswählen, welcher dem Seriell Adapter zugewisen ist.
