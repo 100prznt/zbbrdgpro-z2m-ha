@@ -45,6 +45,9 @@ Der Seriell Adapter muss nun nach folgenden Schema mit der Stiftleiste verbunden
 
 [^1]: Der GPIO0 Anschluss muss nur beim Bootvorgang auf GND gezogen werden und kann anschließend getrennt werden, der ESP32 befindet sich dann im Bootloader Modus.
 
+![Elektrischer Anschluss Seriell Adapter](docu\serialconnection.png)
+Bildquelle: https://notenoughtech.com/home-automation/tasmota-on-sonoff-zb-bridge-pro/
+
 ### EspTool
 
 Nachdem die ZigBee Bridge Pro an den Seriell Adapter angeschlossen ist, kann dieser mit dem PC verbunden werden. Nach 3 Sekunden kann das Jumper Kabel vom GPIO0 Pin getrennt werden, der ESP32 befindet sich jetzt im Bootloader Modus und ist bereit zum Flashen der Firmware.
