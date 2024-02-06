@@ -24,10 +24,10 @@ Vor Beginn der Arbeiten sind folgende Hard- und Softwaretools bereit zu legen.
 
 ### Software
 
-* [EspTool](https://github.com/espressif/esptool/releases/tag/v4.7.0) (ich habe erfolgreich Version v4.7.0 eingesetzt)
-* [Tasmota Firmware](https://ota.tasmota.com/tasmota32/release/tasmota32-zbbrdgpro.factory.bin)
+* [EspTool](https://github.com/espressif/esptool/releases/tag/v4.7.0) (v4.7.0 erfolgreich getestet)
+* [Tasmota Firmware](https://ota.tasmota.com/tasmota32/release/tasmota32-zbbrdgpro.factory.bin) [Kopie in diesem Repository](tasmota32-zbbrdgpro.factory.bin)
 
-## Flashen
+## ESP32 Flashen
 
 ### Anschluss
 
@@ -45,7 +45,7 @@ Der Seriell Adapter muss nun nach folgenden Schema mit der Stiftleiste verbunden
 
 \*) Der GPIO0 Anschluss muss nur wärend des Bootvorganges auf GND gezogen werden und kann anschließend getrennt werden, der ESP32 befindet sich dann im Bootloader Modus.
 
-### ESP32 Firmware Flashen
+### EspTool
 
 Nachdem die ZigBee Bridge Pro an den Seriell Adapter angeschlossen ist, kann dieser mit dem PC verbunden werden. Nach 3 Sekunden kann das Jumper Kabel vom GPIO0 Pin getrennt werden, der ESP32 befindet sich jetzt im Bootloader Modus und ist bereit zum Flashen der Firmware.
 
@@ -70,14 +70,14 @@ Für die Einrichtung der WiFi Verbindung nutze ich gerne das Smartphone. Hier su
 
 Nachdem die ZigBee Bridge mit dem lokalen Netzwerk verbunden ist kann man wieder an den PC wechseln und die Tasmota Startseite aufrufen. Die IP findet man in der Netzwerkübersicht des Routers (FritzBox etc.).
 
-## Firmware auf CC2652 flashen
+### CC2652 Flashen
 
 Neben dem ESP32, welcher ja unter der Tasmota Firmware läuft, muss auch das ZigBee Modul (CC2652) mit einer alternativen Firmware versorgt werden. Die benötigten Dateien sind in der Firmware Datei (tasmota32-zbbrdgpro.factory.bin) enthalten und liegen somit auf der ZigBee Bridge bereit. Unter __Consoles__ -> __Manage File System__ können die benötigten Dateien auch eingesehen werden:
 
-* cc2652_flasher.be
-* intelhex.be
-* sonoff_zb_pro_flasher.be
-* SonoffZBPro_coord_20220219.hex
+* [cc2652_flasher.be](berry\cc2652_flasher.be)
+* [intelhex.be](berry\intelhex.be)
+* [sonoff_zb_pro_flasher.be](berry\sonoff_zb_pro_flasher.be)
+* [SonoffZBPro_coord_20220219.hex](cc2652\SonoffZBPro_coord_20220219.hex)
 
 Zum Flashen wird nun die Berry Console geöffnet, __Consoles__ -> __Berry Scripting Console__ und folgende Befehle müssen zeilenweise ausgeführt werden:
 ```
