@@ -1,5 +1,12 @@
 <img src="docu\sonoff_zigbee_bridge_pro.png" alt="Sonoff ZigBee Bridge Pro" height="110" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="docu\logo-z2m.png" alt="Zigbee2MQTT Logo" height="110" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="docu\home-assistant-logomark-color-on-light.png" alt="Home Assistant Logo" height="110" />
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docu\home-assistant-wordmark-vertical-color-on-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="docu\home-assistant-wordmark-vertical-color-on-light.png">
+  <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
+</picture>
+
+
 # Konfigurieren der Sonoff ZigBee Bridge Pro als Z2M Koordinator in Home Assistant
 
 > Diese Anleitung basiert auf folgend genannten Quellen:
@@ -68,7 +75,7 @@ Die ZigBee Bridge Pro kann nun ganz normal über ein USB Netzteil (min. 1 A) und
 
 ### WiFi einrichten
 
-Für die Einrichtung der WiFi Verbindung nutze ich gerne das Smartphone. Hier sucht man einfach nach verfügbaren WiFi Netzen und verbindet sich mit dem Netz ```Tasmota***```. Anschließend öffnet sich die Konfigurationsoberfläche für die WiFi Verbindung.
+Für die Einrichtung der WiFi Verbindung nutze ich gerne das Smartphone. Hier sucht man einfach nach verfügbaren WiFi Netzen und verbindet sich mit dem Netz `Tasmota***`. Anschließend öffnet sich die Konfigurationsoberfläche für die WiFi Verbindung.
 
 Nachdem die ZigBee Bridge mit dem lokalen Netzwerk verbunden ist kann man wieder an den PC wechseln und die Tasmota Startseite aufrufen. Die IP findet man in der Netzwerkübersicht des Routers (FritzBox etc.).
 
