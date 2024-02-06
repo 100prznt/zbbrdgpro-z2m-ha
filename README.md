@@ -120,4 +120,12 @@ Der Port, unter welchem die ZigBee Bridge erreichbar ist, lässt sich über die 
 ```
 backlog rule1 on system#boot do TCPStart 8888 endon ; rule1 1 ; TCPStart 8888 
 ```
-Der Port, oben 8888, kann beliebig geändert werden.
+Der Port (im Beispiel 8888) kann beliebig geändert werden.
+
+## Einrichten Zigbee2MQTT
+
+Aufgrund der umfangreicheren Produktdatenbank bevorzuge ich Zigbee2MQTT, anstelle von ZHA. Nach dem das Add On in Home Assistant installiert ist, muss der Port zur ZigBee Bridge hinterlegt werden. Daszu wird in der Konfiguration unter Serial folgender Eintrag erstellt:
+```
+port: tcp://192.168.1.100:8888 
+```
+Wobei IP und Port, im Beispiel 192.168.1.100:8888, natürlich nach den eigenen Einstellungen angepasst werden muss. 
