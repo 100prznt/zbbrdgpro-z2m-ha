@@ -1,12 +1,12 @@
-<img src="docu\sonoff_zigbee_bridge_pro.png" alt="Sonoff ZigBee Bridge Pro" height="110" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="docu\home-assistant-logomark-color-on-light.png" alt="Home Assistant Logo" height="110" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="docu\logo-z2m.png" alt="Zigbee2MQTT Logo" height="110" />
+<img src="docu\sonoff_zigbee_bridge_pro.png" alt="Sonoff ZigBee Bridge Pro" height="110" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="docu\logo-z2m.png" alt="Zigbee2MQTT Logo" height="110" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="docu\home-assistant-logomark-color-on-light.png" alt="Home Assistant Logo" height="110" />
 
 # Konfigurieren der Sonoff ZigBee Bridge Pro als Z2M Koordinator in Home Assistant
 
-<pre>Diese Anleitung basiert auf folgend genannten Quellen:
-* [Zigbee Device Compatibility Repository: Zigbee Bridge Pro](https://zigbee.blakadder.com/Sonoff_ZBBridge-P.html)
-* [Mikrocontroller.net: Sonoff ZigBee Bridge Pro & Tasmota](https://www.mikrocontroller.net/topic/544765)
-* [Espressif Systems: EspTool](https://github.com/espressif/esptool/releases/tag/v4.7.0)
-* [Notenoughtech.com: How to flash Tasmota on Sonoff ZB Bridge Pro](https://notenoughtech.com/home-automation/tasmota-on-sonoff-zb-bridge-pro/)</pre>
+> Diese Anleitung basiert auf folgend genannten Quellen:
+> * [Zigbee Device Compatibility Repository: Zigbee Bridge Pro](https://zigbee.blakadder.com/Sonoff_ZBBridge-P.html)
+> * [Mikrocontroller.net: Sonoff ZigBee Bridge Pro & Tasmota](https://www.mikrocontroller.net/topic/544765)
+> * [Espressif Systems: EspTool](https://github.com/espressif/esptool/releases/tag/v4.7.0)
+> * [Notenoughtech.com: How to flash Tasmota on Sonoff ZB Bridge Pro](https://notenoughtech.com/home-automation/tasmota-on-sonoff-zb-bridge-pro/)
 
 
 Damit die __ZigBee Bridge Pro von Sonoff__ als Zigbee2MQTT Koordinator in Home Assistant genutzt werden kann, ist es erforderlich eine alternative Firmware zu installieren. In diesem Repository wird das ganue Vorgehen dokumentiert.
