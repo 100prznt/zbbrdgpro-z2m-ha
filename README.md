@@ -1,8 +1,4 @@
-<img src="docu\sonoff_zigbee_bridge_pro.png" alt="Sonoff ZigBee Bridge Pro" height="110" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="docu\logo-z2m.png" alt="Zigbee2MQTT Logo" height="110" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docu\home-assistant-wordmark-vertical-color-on-dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="docu\home-assistant-wordmark-vertical-color-on-light.png">
-  <img alt="Home Assistant Logo" height="110" src="docu\home-assistant-logomark-color-on-light.png">
-</picture>
+<img src="docu\sonoff_zigbee_bridge_pro.png" alt="Sonoff ZigBee Bridge Pro" height="110" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="docu\logo-z2m.png" alt="Zigbee2MQTT Logo" height="110" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="docu\home-assistant-wordmark-vertical-color-on-dark.png"><source media="(prefers-color-scheme: light)" srcset="docu\home-assistant-wordmark-vertical-color-on-light.png"><img alt="Home Assistant Logo" height="110" src="docu\home-assistant-logomark-color-on-light.png"></picture>
 
 
 # Konfigurieren der Sonoff ZigBee Bridge Pro als Z2M Koordinator in Home Assistant
