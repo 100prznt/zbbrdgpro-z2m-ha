@@ -1,4 +1,4 @@
-<img src="docu\home-assistant-logomark-color-on-light.png" alt="Home Assistant Logo" width="100" />   <img src="docu\logo-z2m.png" alt="Zigbee2MQTT Logo" width="100" />
+<img src="docu\home-assistant-logomark-color-on-light.png" alt="Home Assistant Logo" height="110" />             <img src="docu\logo-z2m.png" alt="Zigbee2MQTT Logo" height="110" />
 
 # Konfigurieren der Sonoff ZigBee Bridge Pro als Z2M Koordinator in Home Assistant
 
