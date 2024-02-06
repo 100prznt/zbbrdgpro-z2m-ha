@@ -3,12 +3,13 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docu\home-assistant-wordmark-vertical-color-on-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="docu\home-assistant-wordmark-vertical-color-on-light.png">
-  <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
+  <img alt="Home Assistant Logo" height="110" src="docu\home-assistant-logomark-color-on-light.png">
 </picture>
 
 
 # Konfigurieren der Sonoff ZigBee Bridge Pro als Z2M Koordinator in Home Assistant
 
+> [!NOTE]
 > Diese Anleitung basiert auf folgend genannten Quellen:
 > * [Zigbee Device Compatibility Repository: Zigbee Bridge Pro](https://zigbee.blakadder.com/Sonoff_ZBBridge-P.html)
 > * [Mikrocontroller.net: Sonoff ZigBee Bridge Pro & Tasmota](https://www.mikrocontroller.net/topic/544765)
@@ -48,11 +49,11 @@ Der Seriell Adapter muss nun nach folgenden Schema mit der Stiftleiste verbunden
 |---------------|-----------------|
 | TX0           | RXD             |
 | RX0           | RXD             |
-| GPIO0         | GND*            |
+| GPIO0         | GND[^1]         |
 | 3V3           | 3,3 V           |
 | GND           | GND             |
 
-\*) Der GPIO0 Anschluss muss nur wärend des Bootvorganges auf GND gezogen werden und kann anschließend getrennt werden, der ESP32 befindet sich dann im Bootloader Modus.
+[^1]: Der GPIO0 Anschluss muss nur beim Bootvorgang auf GND gezogen werden und kann anschließend getrennt werden, der ESP32 befindet sich dann im Bootloader Modus.
 
 ### EspTool
 
