@@ -9,7 +9,7 @@ Damit die __ZigBee Bridge Pro von Sonoff__ als Zigbee2MQTT Koordinator in Home A
 
 Vor Beginn der Arbeiten sind folgende Hard- und Softwaretools bereit zu legen.
 
-![Benötigte Werkzeuge](docu\photos\tools.jpg)
+![Benötigte Werkzeuge](docu/photos/tools.jpg)
 
 ### Hardware
 
@@ -32,9 +32,9 @@ Vor Beginn der Arbeiten sind folgende Hard- und Softwaretools bereit zu legen.
 
 Zuerst muss die Bridge geöffnet werden, hierzu sind die 4 Schrauben unter den Gummipuffern an der Unterseite zu entfernen.
 
-![Schrauben an der Unterseite](docu\photos\screws.jpg)
+![Schrauben an der Unterseite](docu/photos/screws.jpg)
 
-![Geöffnete Bridge](docu\photos\opened.jpg)
+![Geöffnete Bridge](docu/photos/opened.jpg)
 
 Anschließend kann man die 5-polige Stiftleiste an die vorgesehene Stelle auf der Platine löten.
 Der Seriell Adapter muss nun nach folgenden Schema mit der Stiftleiste verbunden werden.
@@ -49,10 +49,7 @@ Der Seriell Adapter muss nun nach folgenden Schema mit der Stiftleiste verbunden
 
 [^1]: Der GPIO0 Anschluss muss nur beim Bootvorgang auf GND gezogen werden und kann anschließend getrennt werden, der ESP32 befindet sich dann im Bootloader Modus.
 
-![Anschluss Seriell Adapter](docu\photos\flash.jpg)
-
-![Elektrischer Anschluss Seriell Adapter](docu\serialconnection.png)
-Bildquelle: https://notenoughtech.com/home-automation/tasmota-on-sonoff-zb-bridge-pro/
+![Elektrischer Anschluss Seriell Adapter](docu/photos/flash.jpg)
 
 ### ESP_Flasher
 
@@ -60,7 +57,7 @@ Nachdem die ZigBee Bridge Pro an den Seriell Adapter angeschlossen ist, kann die
 
 Im Gerätemanager des verwendeten PC muss nun der COM Anschluss identifiziert werden, welcher den Seriell Adapter zugewiesen wurde. Dann kann das EspTool gestartet werden.
 
-![Screenshot ESP_Flasher](docu\photos\ESP_Flasher.png)
+![Screenshot ESP_Flasher](docu/photos/ESP_Flasher.png)
 
 Folgende Einstellung müssen im ESP_Flasher vorgenommen werden:
 1. COM Port auswählen, welcher dem Seriell Adapter zugewisen ist.
@@ -83,10 +80,10 @@ Nachdem die ZigBee Bridge mit dem lokalen Netzwerk verbunden ist kann man wieder
 
 Neben dem ESP32, welcher ja unter der Tasmota Firmware läuft, muss auch das ZigBee Modul (CC2652) mit einer alternativen Firmware versorgt werden. Die benötigten Dateien sind in der Firmware Datei (tasmota32-zbbrdgpro.factory.bin) enthalten und liegen somit auf der ZigBee Bridge bereit. Unter __Consoles__ -> __Manage File System__ können die benötigten Dateien auch eingesehen werden:
 
-* [cc2652_flasher.be](berry\cc2652_flasher.be)
-* [intelhex.be](berry\intelhex.be)
-* [sonoff_zb_pro_flasher.be](berry\sonoff_zb_pro_flasher.be)
-* [SonoffZBPro_coord_20220219.hex](cc2652\SonoffZBPro_coord_20220219.hex)
+* [cc2652_flasher.be](berry/cc2652_flasher.be)
+* [intelhex.be](berry/intelhex.be)
+* [sonoff_zb_pro_flasher.be](berry/sonoff_zb_pro_flasher.be)
+* [SonoffZBPro_coord_20220219.hex](cc2652/SonoffZBPro_coord_20220219.hex)
 
 Zum Flashen wird nun die Berry Console geöffnet, __Consoles__ -> __Berry Scripting Console__ und folgende Befehle müssen zeilenweise ausgeführt werden:
 ```
