@@ -76,6 +76,8 @@ Für die Einrichtung der WiFi Verbindung nutze ich gerne das Smartphone. Hier su
 
 Nachdem die ZigBee Bridge mit dem lokalen Netzwerk verbunden ist kann man wieder an den PC wechseln und die Tasmota Startseite aufrufen. Die IP findet man in der Netzwerkübersicht des Routers (FritzBox etc.).
 
+![Tasmota Weboberfläche](docu/photos/main.png)
+
 ### CC2652 Flashen
 
 Neben dem ESP32, welcher ja unter der Tasmota Firmware läuft, muss auch das ZigBee Modul (CC2652) mit einer alternativen Firmware versorgt werden. Die benötigten Dateien sind in der Firmware Datei (tasmota32-zbbrdgpro.factory.bin) enthalten und liegen somit auf der ZigBee Bridge bereit. Unter __Consoles__ -> __Manage File System__ können die benötigten Dateien auch eingesehen werden:
@@ -86,6 +88,9 @@ Neben dem ESP32, welcher ja unter der Tasmota Firmware läuft, muss auch das Zig
 * [SonoffZBPro_coord_20220219.hex](cc2652/SonoffZBPro_coord_20220219.hex)
 
 Zum Flashen wird nun die Berry Console geöffnet, __Consoles__ -> __Berry Scripting Console__ und folgende Befehle müssen zeilenweise ausgeführt werden:
+
+![Berry Console](docu/photos/berry.png)
+
 ```
 import sonoff_zb_pro_flasher as cc
 cc.load("SonoffZBPro_coord_20220219.hex")
@@ -103,6 +108,9 @@ Sollte hier etwas anderes zurück gegeben werden stimmt etwas nicht mit den übe
 cc.flash()
 ```
 Achtung, das Flashen dauert etwas länger und läuft völlig ohne Rückmeldung. Nach 10 Minuten sollte der Vorgang abgeschlossen sein und man kann über die Konsolenausgabe das Ergebnis prüfen. wichtig ist, dass man keinen Reset durchführt, sondern direkt zur Konsole, __Main Menu__ -> __Consoles__ -> __Console__ navigiert. Hier müssen sich folgende Einträge finden lassen:
+
+![Console](docu/photos/console.png)
+
 ```
 11:28:01.563 FLH: Flashing started (takes 5 minutes during which Tasmota is unresponsive)
 11:34:50.172 FLH: Flashing completed: OK
