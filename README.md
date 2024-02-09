@@ -14,7 +14,7 @@ Vor Beginn der Arbeiten sind folgende Hard- und Softwaretools bereit zu legen.
 ### Hardware
 
 * [Sonoff ZigBee Bridge Pro](https://amzn.to/3SMInVV)
-* [USB zu TTL Seriell Adapter 3,3 V](https://amzn.to/4brv9Fu)
+* [USB zu TTL Seriell Adapter 3,3 V](https://amzn.to/4brv9Fu) (Für diesen Adapter gibt es auch ein [kleines Gehäuse von mir](https://makerworld.com/en/models/176167#profileId-193675))
 * [Jumper Kabel](https://amzn.to/3w89Dpd)
 * [Stiftleiste (2,54 mm 5-polig)](https://amzn.to/3HVmDAV)
 * Lötkolben inkl. Lötutensilien
