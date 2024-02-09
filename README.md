@@ -9,6 +9,8 @@ Damit die __ZigBee Bridge Pro von Sonoff__ als Zigbee2MQTT Koordinator in Home A
 
 Vor Beginn der Arbeiten sind folgende Hard- und Softwaretools bereit zu legen.
 
+![Benötigte Werkzeuge](docu\photos\tools.jpg)
+
 ### Hardware
 
 * [Sonoff ZigBee Bridge Pro](https://amzn.to/3SMInVV)
@@ -20,7 +22,8 @@ Vor Beginn der Arbeiten sind folgende Hard- und Softwaretools bereit zu legen.
 
 ### Software
 
-* [EspTool](https://github.com/espressif/esptool/releases/tag/v4.7.0) (v4.7.0 erfolgreich getestet)
+* [ESP_Flasher](https://github.com/Jason2866/ESP_Flasher/releases) (v2.2.3 erfolgreich getestet)
+* [EspTool](https://github.com/espressif/esptool/releases/tag/v4.7.0) (Alternative)
 * [Tasmota Firmware](https://ota.tasmota.com/tasmota32/release/tasmota32-zbbrdgpro.factory.bin) [Kopie in diesem Repository](tasmota32-zbbrdgpro.factory.bin)
 
 ## ESP32 Flashen
@@ -28,6 +31,11 @@ Vor Beginn der Arbeiten sind folgende Hard- und Softwaretools bereit zu legen.
 ### Anschluss
 
 Zuerst muss die Bridge geöffnet werden, hierzu sind die 4 Schrauben unter den Gummipuffern an der Unterseite zu entfernen.
+
+![Schrauben an der Unterseite](docu\photos\screws.jpg)
+
+![Geöffnete Bridge](docu\photos\opened.jpg)
+
 Anschließend kann man die 5-polige Stiftleiste an die vorgesehene Stelle auf der Platine löten.
 Der Seriell Adapter muss nun nach folgenden Schema mit der Stiftleiste verbunden werden.
 
@@ -41,18 +49,20 @@ Der Seriell Adapter muss nun nach folgenden Schema mit der Stiftleiste verbunden
 
 [^1]: Der GPIO0 Anschluss muss nur beim Bootvorgang auf GND gezogen werden und kann anschließend getrennt werden, der ESP32 befindet sich dann im Bootloader Modus.
 
+![Anschluss Seriell Adapter](docu\photos\flash.jpg)
+
 ![Elektrischer Anschluss Seriell Adapter](docu\serialconnection.png)
 Bildquelle: https://notenoughtech.com/home-automation/tasmota-on-sonoff-zb-bridge-pro/
 
-### EspTool
+### ESP_Flasher
 
 Nachdem die ZigBee Bridge Pro an den Seriell Adapter angeschlossen ist, kann dieser mit dem PC verbunden werden. Nach 3 Sekunden kann das Jumper Kabel vom GPIO0 Pin getrennt werden, der ESP32 befindet sich jetzt im Bootloader Modus und ist bereit zum Flashen der Firmware.
 
 Im Gerätemanager des verwendeten PC muss nun der COM Anschluss identifiziert werden, welcher den Seriell Adapter zugewiesen wurde. Dann kann das EspTool gestartet werden.
 
-TODO ![Screenshot EspTool]()
+![Screenshot ESP_Flasher](docu\photos\ESP_Flasher.png)
 
-Folgende Einstellung müssen im EspTool vorgenommen werden:
+Folgende Einstellung müssen im ESP_Flasher vorgenommen werden:
 1. COM Port auswählen, welcher dem Seriell Adapter zugewisen ist.
 2. Firmware Datei (tasmota32-zbbrdgpro.factory.bin) auswählen.
 3. Flashen starten
@@ -110,7 +120,7 @@ Aktuell läuft die Bridge im Mode ZigBee2Tasmota. Für die Verwendung in Home As
 
 ### Prüfen der Konfiguration
 
-Unter dem Eintrag __Configuration__ -> __Template__ muss der Eintrag wie folgt lauten:
+Unter dem Eintrag __Configuration__ -> __Configure Other__ muss der Template-Eintrag wie folgt lauten:
 ```
 {"NAME":"TCP ZBBridge Pro","GPIO":[0,0,576,0,480,0,0,0,0,1,1,5792,0,0,0,5472,0,320,5793,5504,0,640,608,32,0,0,0,0,0,1,0,0,0,0,0,0],"FLAG":0,"BASE":1}
 ```
