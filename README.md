@@ -5,6 +5,9 @@
 
 Damit die __ZigBee Bridge Pro von Sonoff__ als __Zigbee2MQTT__ Interface in __Home Assistant__ genutzt werden kann, ist es erforderlich eine alternative Firmware zu installieren. In diesem Repository wird das ganue Vorgehen dokumentiert.
 
+> [!NOTE]
+> Nach dem Update auf 
+
 ## Vorbereitung
 
 Vor Beginn der Arbeiten sind folgende Hard- und Softwaretools bereit zu legen.
