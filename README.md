@@ -5,7 +5,7 @@
 
 Damit die __ZigBee Bridge Pro von Sonoff__ als __Zigbee2MQTT__ Interface in __Home Assistant__ genutzt werden kann, ist es erforderlich eine alternative Firmware zu installieren. In diesem Repository wird das ganue Vorgehen dokumentiert.
 
-> [!NOTE]
+> [!Zigbee2MQTT 2.0.0-2]
 > Nach dem Update auf Zigbee2MQTT 2.0.0-2 lässt sich das Add-On nicht mehr starten. Es wird folgender Fehler ausgegeben: ```Cannot discover TCP adapters at this time. Specify valid 'adapter' and 'port' in your configuration.```
 > In der Konfiguration muss unter ```Serial``` der Eintrag ```adapter: zstack``` ergänzt werden. Nach einem Hardreset der Bridge ließ sich das Add-on wieder starten.
 
